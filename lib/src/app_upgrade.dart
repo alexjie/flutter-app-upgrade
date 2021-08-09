@@ -50,21 +50,21 @@ class AppUpgrade {
   static Future<bool> appUpgrade(
     BuildContext context,
     Future<AppUpgradeInfo> future, {
-    TextStyle titleStyle,
-    TextStyle contentStyle,
-    String cancelText,
-    TextStyle cancelTextStyle,
-    String okText,
-    TextStyle okTextStyle,
-    List<Color> okBackgroundColors,
-    Color progressBarColor,
+    TextStyle? titleStyle,
+    TextStyle? contentStyle,
+    String? cancelText,
+    TextStyle? cancelTextStyle,
+    String? okText,
+    TextStyle? okTextStyle,
+    List<Color>? okBackgroundColors,
+    Color? progressBarColor,
     double borderRadius = 20.0,
-    String iosAppId,
-    AppMarketInfo appMarketInfo,
-    VoidCallback onCancel,
-    VoidCallback onOk,
-    DownloadProgressCallback downloadProgress,
-    DownloadStatusChangeCallback downloadStatusChange,
+    String? iosAppId,
+    AppMarketInfo? appMarketInfo,
+    VoidCallback? onCancel,
+    VoidCallback? onOk,
+    DownloadProgressCallback? downloadProgress,
+    DownloadStatusChangeCallback? downloadStatusChange,
   }) async {
     return future.then((AppUpgradeInfo appUpgradeInfo) {
       bool upgrade = appUpgradeInfo != null && appUpgradeInfo.title != null;
@@ -102,23 +102,23 @@ class AppUpgrade {
     BuildContext context,
     String title,
     List<String> contents, {
-    String apkDownloadUrl,
+    String? apkDownloadUrl,
     bool force = false,
-    TextStyle titleStyle,
-    TextStyle contentStyle,
-    String cancelText,
-    TextStyle cancelTextStyle,
-    String okText,
-    TextStyle okTextStyle,
-    List<Color> okBackgroundColors,
-    Color progressBarColor,
+    TextStyle? titleStyle,
+    TextStyle? contentStyle,
+    String? cancelText,
+    TextStyle? cancelTextStyle,
+    String? okText,
+    TextStyle? okTextStyle,
+    List<Color>? okBackgroundColors,
+    Color? progressBarColor,
     double borderRadius = 20.0,
-    String iosAppId,
-    AppMarketInfo appMarketInfo,
-    VoidCallback onCancel,
-    VoidCallback onOk,
-    DownloadProgressCallback downloadProgress,
-    DownloadStatusChangeCallback downloadStatusChange,
+    String? iosAppId,
+    AppMarketInfo? appMarketInfo,
+    VoidCallback? onCancel,
+    VoidCallback? onOk,
+    DownloadProgressCallback? downloadProgress,
+    DownloadStatusChangeCallback? downloadStatusChange,
   }) {
     showDialog(
         context: context,
@@ -163,16 +163,16 @@ class AppUpgrade {
 
 class AppInfo {
   AppInfo({this.version, this.versionName, this.versionCode, this.packageName});
-  String version;
-  String versionName;
-  String versionCode;
-  String packageName;
+  String? version;
+  String? versionName;
+  String? versionCode;
+  String? packageName;
 }
 
 class AppUpgradeInfo {
   AppUpgradeInfo(
-      {@required this.title,
-      @required this.contents,
+      {required this.title,
+      required this.contents,
       this.apkDownloadUrl,
       this.force = false});
 
@@ -189,7 +189,7 @@ class AppUpgradeInfo {
   ///
   /// apk下载url
   ///
-  final String apkDownloadUrl;
+  final String? apkDownloadUrl;
 
   ///
   /// 是否强制升级
